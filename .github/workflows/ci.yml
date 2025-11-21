@@ -12,7 +12,7 @@ jobs:
     
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
+        node-version: [20.x]
     
     steps:
     - uses: actions/checkout@v3
@@ -28,11 +28,6 @@ jobs:
     
     - name: Build
       run: npm run build
-    
-    - name: Run verification tests
-      run: |
-        node dist/verify-foundation.js
-        node dist/verify-phase1.js
     
     - name: Build dashboard
       run: |

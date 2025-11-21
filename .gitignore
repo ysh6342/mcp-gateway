@@ -1,6 +1,5 @@
 # Dependencies
 node_modules/
-package-lock.json
 
 # Build output
 dist/
@@ -33,7 +32,6 @@ gateway-config.json
 dashboard/.next/
 dashboard/out/
 dashboard/node_modules/
-dashboard/package-lock.json
 
 # Test coverage
 coverage/

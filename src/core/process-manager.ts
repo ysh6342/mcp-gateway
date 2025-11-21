@@ -51,7 +51,19 @@ export class ProcessManager {
 
         logger.info({ id }, 'Stopping server process');
         subprocess.kill('SIGTERM');
-        this.processes.delete(id);
+
+        try {
+            await subprocess;
+        } catch (error: any) {
+            // SIGTERM으로 종료된 경우 에러가 발생하지만 정상 동작
+            if (error.isTerminated || error.signal === 'SIGTERM') {
+                logger.debug({ id }, 'Process terminated successfully');
+            } else {
+                throw error;
+            }
+        } finally {
+            this.processes.delete(id);
+        }
     }
 
     async stopAll(): Promise<void> {
