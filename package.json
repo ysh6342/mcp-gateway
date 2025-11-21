@@ -7,7 +7,21 @@
     "start": "node dist/index.js",
     "dev": "ts-node src/index.ts",
     "build": "tsc",
+    "build:bin": "pkg . --out-path binaries",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": "dist/index.js",
+  "pkg": {
+    "scripts": "dist/**/*.js",
+    "assets": [
+      "node_modules/**/*"
+    ],
+    "targets": [
+      "node20-linux-x64",
+      "node20-macos-x64",
+      "node20-win-x64"
+    ],
+    "outputPath": "binaries"
   },
   "keywords": [
     "mcp",
@@ -34,6 +48,7 @@
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.5",
     "@types/node": "^22.9.0",
+    "pkg": "^5.8.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3"
   }
