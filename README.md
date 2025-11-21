@@ -1,5 +1,8 @@
+# MCP Gateway
 
-<parameter name="StartLine">1
+[![CI](https://github.com/ysh6342/mcp-gateway/actions/workflows/ci.yml/badge.svg)](https://github.com/ysh6342/mcp-gateway/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D20.9.0-brightgreen)](https://nodejs.org/)
 
 고가용성 MCP(Model Context Protocol) 서버 관리 미들웨어
 
@@ -13,6 +16,7 @@ MCP Gateway는 여러 MCP 서버를 단일 진입점으로 통합하여 AI 클�
 - **원격 서버 지원**: SSE를 통한 원격 MCP 서버 연결
 - **스마트 라우팅**: 도구 호출을 적절한 서버로 자동 라우팅
 - **웹 대시보드**: 실시간 서버 모니터링 및 제어
+- **핫 리로딩**: 설정 파일 변경 시 자동 재시작
 - **장애 격리**: 개별 서버 장애가 전체 시스템에 영향을 주지 않음
 
 ## 설치
@@ -79,6 +83,10 @@ node dist/verify-foundation.js
 # Phase 1 검증 (핵심 로직)
 node dist/verify-phase1.js
 ```
+
+## 기여
+
+기여 방법은 [CONTRIBUTING.md](CONTRIBUTING.md)를 참조하세요.
 
 ## 라이선스
 
