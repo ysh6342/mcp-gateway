@@ -1,0 +1,19 @@
+{
+  "servers": [
+    {
+      "id": "test-server",
+      "name": "Test Server",
+      "command": "node",
+      "args": [
+        "-e",
+        "setInterval(() => console.log(\"Test server running...\"), 1000)"
+      ],
+      "enabled": true,
+      "restartPolicy": {
+        "mode": "on-failure",
+        "maxRetries": 3,
+        "backoffBase": 1000
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "servers": [
+    {
+      "id": "local-echo",
+      "name": "Local Echo Server",
+      "command": "node",
+      "args": [
+        "-e",
+        "\n        const { Server } = require('@modelcontextprotocol/sdk/server/index.js');\n        const { StdioServerTransport } = require('@modelcontextprotocol/sdk/server/stdio.js');\n        const { CallToolRequestSchema, ListToolsRequestSchema } = require('@modelcontextprotocol/sdk/types.js');\n\n        const server = new Server({ name: 'echo', version: '1.0' }, { capabilities: { tools: {} } });\n\n        server.setRequestHandler(ListToolsRequestSchema, async () => ({\n            tools: [{ name: 'echo', description: 'Echoes back input', inputSchema: { type: 'object' } }]\n        }));\n\n        server.setRequestHandler(CallToolRequestSchema, async (req) => {\n            if (req.params.name === 'echo') return { content: [{ type: 'text', text: JSON.stringify(req.params.arguments) }] };\n            throw new Error('Tool not found');\n        });\n\n        const transport = new StdioServerTransport();\n        server.connect(transport);\n      "
+      ],
+      "transport": "stdio",
+      "enabled": true
+    }
+  ]
+}

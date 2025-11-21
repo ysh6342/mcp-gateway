@@ -1,0 +1,40 @@
+{
+  "name": "mcp-gateway",
+  "version": "0.1.0",
+  "description": "Middleware for managing local MCP servers with high availability and control plane features.",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mcp",
+    "gateway",
+    "middleware",
+    "ai",
+    "agent"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.22.0",
+    "chokidar": "^4.0.3",
+    "cors": "^2.8.5",
+    "eventsource": "^4.1.0",
+    "execa": "^9.5.2",
+    "express": "^5.1.0",
+    "pino": "^9.5.0",
+    "pino-pretty": "^13.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/chokidar": "^1.7.5",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.5",
+    "@types/node": "^22.9.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
