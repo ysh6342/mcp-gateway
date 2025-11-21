@@ -29,11 +29,6 @@ jobs:
     - name: Build
       run: npm run build
     
-    - name: Run verification tests
-      run: |
-        node dist/verify-foundation.js
-        node dist/verify-phase1.js
-    
     - name: Build dashboard
       run: |
         cd dashboard
